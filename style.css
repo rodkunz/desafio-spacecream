@@ -18,12 +18,12 @@
 }
 
 body {
-  background-color: var(--white-blue);
+  background: var(--white-blue);
   font-size: 1.6rem;
 }
 
 header {
-  background-color: var(--lilac);
+  background: var(--lilac);
   width: 100%;
   text-align: center;
   padding-top: 1.2rem;
@@ -33,14 +33,10 @@ header {
 header img {
   width: 16.7rem;
   height: 16.7rem;
-  transition: all 3s;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  
+
 }
 
-header img:hover {
-  transform: rotate(360deg);
-}
 
 header .title-wrapper {
   background-color: var(--light-violet);
@@ -51,10 +47,9 @@ header .title-wrapper {
 }
 
 header h1 {
-  font-family: 'Staatliches', sans-serif;
-  font-style: normal;
+  font-family: 'Staatliches', cursive;
   font-weight: 400;
-  font-size: 4.0rem;
+  font-size: clamp(2.5rem, 0.5rem + 8vw, 4.0rem);
   line-height: 3.4rem;
   letter-spacing: 0.05em;
   color: var(--fc-heading);
@@ -63,7 +58,6 @@ header h1 {
 
 main {
   width: 90%;
-  max-width: clamp(30rem, 30rem + 60vw, 70rem);
   margin: auto;
 }
 
@@ -79,7 +73,7 @@ main section p {
   font-size: 2.0rem;
   line-height: 2.3rem;
   text-align: center;
-  color: var(--dark-purple);
+  color: var(--fc-texting);
 }
 
 .card-wrapper {
@@ -91,16 +85,17 @@ main section p {
 
 .card {
   position: relative;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.25));
 }
 
 .card img {
   width: 100%;
-  animation: downtop 1.3s;
-
+  animation: downtop 4s;
+  
 }
 
 .card h2 {
-  font-family: 'Staatliches', sans-serif;
+  font-family: 'Staatliches', cursive;
   font-weight: 400;
   font-size: 2.0rem;
   line-height: 3.4rem;
@@ -109,13 +104,45 @@ main section p {
   color: var(--dark-purple);
   top: 1.6rem;
   right: 1.6rem;
-  background-color: var(--light-pink);
-  border-radius: 20px;
-  height: 3.2rem;
+  background: var(--light-pink);
+  border-radius: 2.0rem;
+  height: 3.5rem;
   padding: 0 2.4rem;
   display: inline-flex;
   align-items: center;
   animation: topdown 2s;
+}
+
+footer {
+  font-family: 'Open Sans', sans-serif;
+  display: none;
+  color: var(--dark-purple);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+}
+
+footer a {
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  color: var(--darkblue);
+
+}
+
+@keyframes fromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes downtop {
@@ -123,6 +150,7 @@ main section p {
     opacity: 0;
     transform: translateY(5rem);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -134,8 +162,166 @@ main section p {
     opacity: 0;
     transform: translateY(-2rem);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media (min-width:700px) {
+  body {
+    display: flex;
+
+  }
+
+  main {
+    padding: 0 5rem;
+  }
+
+  section {
+    display: none;
+  }
+
+  header::after {
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a rhoncus leo. Donec at scelerisque magna. Nullam vitae neque sit amet erat dignissim cursus ac ac lectus. Aliquam erat volutpat. Praesent at quam aliquet, pharetra est in, sagittis lorem.elit. Donec a rhoncus leo. ";
+    color: var(--fc-heading);
+    font-size: clamp(2rem, 1.4vw, 2.4rem);
+    line-height: 3.0rem;
+    display: block;
+    margin: auto;
+    max-width: 40.5rem;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 5rem;
+  }
+
+  header h1 {
+    font-size: clamp(3rem, 0.5rem + 3vw, 4.8rem);
+  }
+
+  header img {
+    width: 25rem;
+    height: 21rem;
+  }
+
+  .headerbox {
+    margin-top: 2rem;
+  }
+
+  .title-wrapper {
+    margin-top: 3rem;
+    min-height: 7rem;
+  }
+
+  footer {
+    display: inline;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  body {
+    display: flex;
+  }
+
+  main {
+    padding: 0 5rem 5rem;
+  }
+
+  section {
+    display: none;
+  }
+
+  header {
+    width: 40%;
+  }
+
+  header::after {
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a rhoncus leo. Donec at scelerisque magna. Nullam vitae neque sit amet erat dignissim cursus ac ac lectus. Aliquam erat volutpat. Praesent at quam aliquet, pharetra est in, sagittis lorem.elit. Donec a rhoncus leo. Donec at scelerisque magna. Nullam vitae neque sit amet erat dignissim cursus ac ac lectus. Aliquam erat volutpat. Praesent at quam aliquet, pharetra est in, sagittis lorem. ';
+    font-family: 'Roboto', sans-serif;
+    color: var(--fc-heading);
+    font-weight: 400;
+    font-size: clamp(2rem, 1.4vw, 2.4rem);
+    line-height: 3.1rem;
+    margin: auto;
+    padding-top: 5rem;
+    display: block;
+    width: 37.7rem;
+    width: 80%;
+    animation: fromRight 3.5s;
+
+  }
+
+  header h1 {
+    font-size: clamp(3rem, 0.5rem + 3vw, 4.8rem);
+    animation: fromRight 2.5s ;
+  }
+
+  header img {
+    width: 25rem;
+    height: 21rem;
+    animation: fromRight 1.5s ;
+  }
+
+  .headerbox {
+    margin-top: 2rem;
+  }
+
+  .title-wrapper {
+    margin-top: 3.2rem;
+    min-height: 7rem;
+  }
+
+  .card h2 {
+    display: none;
+  }
+
+  .card {
+    transition: all .3s;
+  }
+
+  .card:hover {
+    transform: scale(1.06);
+  }
+
+  footer {
+    display: inline;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .card-wrapper {
+
+    grid-template-areas: "img1 img2 img5"
+      "img4 img2 img6"
+      "img4 img3 img6"
+    ;
+  }
+
+  .card-wrapper div:nth-child(1) {
+    grid-area: img1;
+  }
+
+  .card-wrapper div:nth-child(2) {
+    grid-area: img2;
+  }
+
+  .card-wrapper div:nth-child(3) {
+    grid-area: img3;
+  }
+
+  .card-wrapper div:nth-child(4) {
+    grid-area: img4;
+  }
+
+  .card-wrapper div:nth-child(5) {
+    grid-area: img5;
+  }
+
+  .card-wrapper div:nth-child(6) {
+    grid-area: img6;
+  }
+
 }

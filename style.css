@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --white-blue: #EFF1FF;
+  --light-pink: #FEEAFA;
+  --light-violet: #CBC0D3;
+  --lilac: #8E9AAF;
+  --dark-purple: #4A4E69;
+
+  --fc-heading: #FFFFFF;
+  --fc-texting: #23053A;
+}
+
+body {
+  background-color: var(--white-blue);
+  font-size: 1.6rem;
+}
+
+header {
+  background-color: var(--lilac);
+  width: 100%;
+  text-align: center;
+  padding-top: 1.2rem;
+  padding-bottom: 2.9rem;
+}
+
+header img {
+  width: 16.7rem;
+  height: 16.7rem;
+  transition: all 3s;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  
+}
+
+header img:hover {
+  transform: rotate(360deg);
+}
+
+header .title-wrapper {
+  background-color: var(--light-violet);
+  height: 4.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  font-family: 'Staatliches', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.0rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  color: var(--fc-heading);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+main {
+  width: 90%;
+  max-width: clamp(30rem, 30rem + 60vw, 70rem);
+  margin: auto;
+}
+
+main section {
+  max-width: 30.5rem;
+  margin: auto;
+  padding-top: 2.5rem;
+}
+
+main section p {
+  font-family: 'Palanquin', sans-serif;
+  font-weight: 400;
+  font-size: 2.0rem;
+  line-height: 2.3rem;
+  text-align: center;
+  color: var(--dark-purple);
+}
+
+.card-wrapper {
+  margin-top: 6.3rem;
+  margin-bottom: 6.0rem;
+  display: grid;
+  gap: 3.2rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  animation: downtop 1.3s;
+
+}
+
+.card h2 {
+  font-family: 'Staatliches', sans-serif;
+  font-weight: 400;
+  font-size: 2.0rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  position: absolute;
+  color: var(--dark-purple);
+  top: 1.6rem;
+  right: 1.6rem;
+  background-color: var(--light-pink);
+  border-radius: 20px;
+  height: 3.2rem;
+  padding: 0 2.4rem;
+  display: inline-flex;
+  align-items: center;
+  animation: topdown 2s;
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
